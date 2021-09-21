@@ -43,7 +43,12 @@ class Environment:
 
 
     def move(self, name):
-        pass
+        columns = [0 , 1, 2]
+        column, _ = self.positions[name]
+        columns.remove(column)
+        new_column = rd.choice(columns)
+
+
 
 
 
