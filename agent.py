@@ -1,7 +1,6 @@
 class Agent:
     def __init__(self, name):
         self.name = name
-        self.goal = False
         self.pushing = False
 
     def is_satisfied(self, environment):
@@ -11,12 +10,15 @@ class Agent:
             return False
         return True
 
-    def move(self, environment, column):
+    def move(self, environment):
         if self.is_free():
             environment.move(self.name)
 
     def push(self):
         self.pushing = True
+
+    def is_free(self, environment):
+        return environment.up_neighbor_id() is None
 
     def action(self, environment):
         if not self.is_satisfied(environment):
@@ -29,7 +31,4 @@ class Agent:
             return True
         else:
             return False
-
-    def is_free(self, environment):
-        pass
 
