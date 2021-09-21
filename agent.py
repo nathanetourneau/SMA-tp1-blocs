@@ -4,29 +4,29 @@ class Agent:
         self.pushing = False
 
     def is_satisfied(self, environment):
-        if (environment.down_neighbor(self.name).pushing) or not (
+        if (environment.is_pushing(environment.down_neighbor_id(self.name))) or not (
             environment.goal(self.name)
         ):
             return False
         return True
 
     def move(self, environment):
-        if self.is_free():
+        if self.is_free(environment):
             environment.move(self.name)
 
     def push(self):
         self.pushing = True
 
     def is_free(self, environment):
-        return environment.up_neighbor_id() is None
+        return environment.up_neighbor_id(self.name) is None
 
     def action(self, environment):
         if not self.is_satisfied(environment):
-            if self.is_free():
+            if self.is_free(environment):
                 self.move(environment)
                 self.pushing = False
             else:
-                self.push(environment)
+                self.push()
 
             return True
         else:
