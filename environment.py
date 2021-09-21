@@ -34,29 +34,3 @@ class Environment:
         pass
 
 
-
-
-
-
-
-
-
-
-
-class Agent:
-    def __init__(self, downside=None):
-        self.downside = downside
-
-        isinstance(self.downside, Agent)
-
-    def move(self, x):
-        pass
-
-    def push(self):
-        pass
-
-
-    def is_satisfied(self):
-        pass
-
-
