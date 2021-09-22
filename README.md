@@ -1,6 +1,6 @@
 # TP1-blocs
 
-Modélisation problème de planification du "monde des blocs" par un système multi-agents intéragissant avec son environnement.
+Modélisation du problème de planification du "monde des blocs" par un système multi-agents intéragissant avec son environnement.
 
 **Authors** : [@paulflagel](https://github.com/paulflagel/), [@nathanetourneau](https://github.com/nathanetourneau).
 
